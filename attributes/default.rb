@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: npm-package-install
+# Cookbook Name:: npm
 #
 # Author:: Kevin Sookocheff <kevin.sookocheff@gmail.com>
 #
@@ -18,5 +18,5 @@
 # limitations under the License.
 #
 
-default['npm-package-install']['data_bag_name'] = 'npm-packages'
-default['npm-package-install']['data_bag_item'] = 'packages'
+default['npm']['data_bag_name'] = 'npm-packages'
+default['npm']['data_bag_item'] = 'packages'

@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: npm-package-install
+# Cookbook Name:: npm
 # Recipe:: default
 #
 # Author:: Kevin Sookocheff <kevin.sookocheff@gmail.com>
@@ -21,8 +21,8 @@
 
 include_recipe 'nodejs'
 
-bag_path = node['npm-package-install']['data_bag_name']
-bag_item = node['npm-package-install']['data_bag_item']
+bag_path = node['npm']['data_bag_name']
+bag_item = node['npm']['data_bag_item']
 
 data_bag = data_bag_item(bag_path, bag_item)
 

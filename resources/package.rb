@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: npm-package-install
-# Resource:: npm-package-install
+# Cookbook Name:: npm
+# Resource:: npm
 #
 # Author:: Sergey Balbeko <sergey@balbeko.com>
 #

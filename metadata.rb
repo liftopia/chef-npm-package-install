@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: npm-package-install
+# Cookbook Name:: npm
 #
 # Author:: Sergey Balbeko <sergey@balbeko.com>
 # Author:: Kevin Sookocheff <kevin.sookocheff@gmail.com>
