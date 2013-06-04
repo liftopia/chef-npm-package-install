@@ -18,5 +18,5 @@
 # limitations under the License.
 #
 
-default['npm']['data_bag_name'] = 'npm-packages'
-default['npm']['data_bag_item'] = 'packages'
+default['npm-package-install']['data_bag_name'] = 'npm-packages'
+default['npm-package-install']['data_bag_item'] = 'packages'
