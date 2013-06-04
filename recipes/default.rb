@@ -2,11 +2,9 @@
 # Cookbook Name:: npm
 # Recipe:: default
 #
-# Author:: Marius Ducea (marius@promethost.com)
-# Author:: Sergey Balbeko <sergey@balbeko.com>
+# Author:: Kevin Sookocheff <kevin.sookocheff@gmail.com>
 #
-# Copyright 2010, Promet Solutions
-# Copyright 2012, Sergey Balbeko
+# Copyright 2013, Kevin Sookocheff
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,18 +19,13 @@
 # limitations under the License.
 #
 
-include_recipe "nodejs"
+include_recipe 'nodejs'
 
-package "curl"
+packages = data_bag_item('npm-packages', 'packages')
 
-bash "install npm - package manager for node" do
-  cwd "/usr/local/src"
-  user "root"
-  code <<-EOF
-    mkdir -p npm-v#{node[:npm][:version]} && \
-    cd npm-v#{node[:npm][:version]}
-    curl -L http://registry.npmjs.org/npm/-/npm-#{node[:npm][:version]}.tgz | tar xzf - --strip-components=1 && \
-    make uninstall dev
-  EOF
-  not_if "#{node[:nodejs][:dir]}/bin/npm -v 2>&1 | grep '#{node[:npm][:version]}'"
+for package in packages['packages']
+    package_name = package['name']
+    package_version = package['version']
+
+    npm_package "#{package_name}@#{package_version}"
 end
