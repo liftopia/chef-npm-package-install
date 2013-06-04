@@ -1,9 +1,9 @@
 #
-# Cookbook Name:: npm
+# Cookbook Name:: npm-package-install
 #
-# Author:: Sergey Balbeko <sergey@balbeko.com>
+# Author:: Kevin Sookocheff <kevin.sookocheff@gmail.com>
 #
-# Copyright 2012, Sergey Balbeko
+# Copyright 2013, Kevin Sookocheff
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,5 +18,5 @@
 # limitations under the License.
 #
 
-default['npm']['version'] = '1.1.0-3'
-#default['npm'][''] = ''
+default['npm']['data_bag_name'] = 'npm-packages'
+default['npm']['data_bag_item'] = 'packages'

@@ -1,9 +1,11 @@
 #
-# Cookbook Name:: npm
+# Cookbook Name:: npm-package-install
 #
 # Author:: Sergey Balbeko <sergey@balbeko.com>
+# Author:: Kevin Sookocheff <kevin.sookocheff@gmail.com>
 #
 # Copyright 2012, Sergey Balbeko
+# Copyright 2013, Kevin Sookocheff
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,10 +20,10 @@
 # limitations under the License.
 #
 
-maintainer       "Sergey Balbeko"
-maintainer_email "sergey@balbeko.com"
+maintainer       "Kevin Sookocheff"
+maintainer_email "kevin.sookocheff@gmail.com"
 license          "Apache License, Version 2.0"
-description      "Installs/Configures npm"
+description      "Installs npm packages"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "0.1.0"
 

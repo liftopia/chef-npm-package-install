@@ -1,53 +1,30 @@
 # Cookbook for Node Package Manager
-http://community.opscode.com/cookbooks/npm
 
 ##DESCRIPTION:
-This cookbook grown up from mdxp's nodejs::npm recipe
-It provides some LWRP's for simple management of node packages
+It provides some LWRP's for installing node packages
 
 ##REQUIREMENTS:
 This cookbook depends on https://github.com/mdxp/cookbooks/tree/master/nodejs/
 
 ##ATTRIBUTES:
-The only attribute default['npm']['version'] specifies a version of npm should be installed.
+The attributes specify the location of the data_bag used to install npm
+packages.
 
-_NOTE:_ this cookbook will not work with npm <= 1.0.0
+default['npm']['data_bag_name'] = 'npm-packages'
+default['npm']['data_bag_item'] = 'packages'
 
 ##USAGE:
-Use recipe['npm'] to install npm it self. 
-To install some packge system-wide use
+Add a data_bag to `npm_packages/` called `packages.json`. This data_bag lists
+the packages that you want installed by `npm`.
 
-    npm_package "foo@0.3.2"
+###Example data_bag
 
-or
-
-    npm_package "foo" do
-      version "0.3.2"
-      action :install
-    end 
-
-To install some package under your project root try to:
-
-    npm_package "foo" do
-	  version "0.3.2"
-	  path "/your/project/path/goes/here"
-	  action :install_local
-	end
-	
-To uninstall some package - obviously you can do something like
-
-    npm_package "bad_one" do
-	  version "0.3.2"
-	  action :uninstall
-	end
-	
-or
-
-    npm_package "bad_local_one" do
-	  version "0.3.2"
-	  path "/your/project/path/goes/here"
-	  action :uninstall_local
-	end
-
-## TODO
-- wrap other features of npm to LWRP
+{
+    "id": "packages",
+    "packages": [
+        {
+            "name": "docpad",
+            "version": "6.38.0"
+        }
+    ]
+}
